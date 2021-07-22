@@ -39,31 +39,15 @@ def numerize(n, decimals=2):
     if n < 0:
         is_negative_string = "-"
     n = abs(Decimal(n))
-    if n < 1000:
-        return is_negative_string + str(drop_zero(round_num(n, decimals)))
-    elif n >= 1000 and n < 1000000:
-        if n % 1000 == 0:
-            return is_negative_string + str(int(n / 1000)) + "K"
+    p = ["", "K", "M","B","T"]
+    i= 0
+    if n < 0: return is_negative_string + str(n)
+    while true:
+        if n < 1000:
+	    return is_negative string + str(drop_zero(round_num(n, decimals) + p[i]
+	    break
         else:
-            n = n / 1000
-            return is_negative_string + str(drop_zero(round_num(n, decimals))) + "K"
-    elif n >= 1000000 and n < 1000000000:
-        if n % 1000000 == 0:
-            return is_negative_string + str(int(n / 1000000)) + "M"
-        else:
-            n = n / 1000000
-            return is_negative_string + str(drop_zero(round_num(n, decimals))) + "M"
-    elif n >= 1000000000 and n < 1000000000000:
-        if n % 1000000000 == 0:
-            return is_negative_string + str(int(n / 1000000000)) + "B"
-        else:
-            n = n / 1000000000
-            return is_negative_string + str(drop_zero(round_num(n, decimals))) + "B"
-    elif n >= 1000000000000 and n < 1000000000000000:
-        if n % 1000000000000 == 0:
-            return is_negative_string + str(int(n / 1000000000000)) + "T"
-        else:
-            n = n / 1000000000000
-            return is_negative_string + str(drop_zero(round_num(n, decimals))) + "T"
-    else:
-        return is_negative_string + str(n)
+            n= n/1000
+	    i += 1
+    
+       
