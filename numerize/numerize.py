@@ -40,14 +40,12 @@ def numerize(n, decimals=2):
         is_negative_string = "-"
     n = abs(Decimal(n))
     p = ["", "K", "M","B","T"]
-    i= 0
-    if n < 0: return is_negative_string + str(n)
-    while true:
-        if n < 1000:
-	    return is_negative string + str(drop_zero(round_num(n, decimals))) + p[i]
-	    break
+    for i in p:
+    	if n < 1000:
+		if n < 0: return is_negative_string + str(n)
+		else:
+			return is_negative string + str(drop_zero(round_num(n, decimals))) + i
         else:
-            n= n/1000
-	    i += 1
+		n= n/1000
     
        
