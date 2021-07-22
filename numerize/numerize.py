@@ -44,7 +44,7 @@ def numerize(n, decimals=2):
     if n < 0: return is_negative_string + str(n)
     while true:
         if n < 1000:
-	    return is_negative string + str(drop_zero(round_num(n, decimals) + p[i]
+	    return is_negative string + str(drop_zero(round_num(n, decimals))) + p[i]
 	    break
         else:
             n= n/1000
